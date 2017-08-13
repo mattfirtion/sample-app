@@ -14,27 +14,25 @@
 				"name": "*ubuntu-xenial-16.04-amd64-server-*",
 				"root-device-type": "ebs"
 			},
-      "most_recent": true
+			"most_recent": true
 		},
 		"instance_type": "t2.micro",
 		"ssh_username": "ubuntu",
-    "ami_name": "angular2-app-{{timestamp}}"
+		"ami_name": "angular2-app-{{timestamp}}"
 	}],
 
-	"provisioners": [
-		{
+	"provisioners": [{
 			"type": "file",
 			"source": "angular2-sample-app/dist/prod/",
 			"destination": "/tmp"
-		}
-		{
+		}, {
 			"type": "shell",
 			"inline": [
 				"sudo apt-get update",
-				"sudo apt-get install -y nginx"
+				"sudo apt-get install -y nginx",
 				"sudo cp /tmp/prod/* /var/www/html/"
 			]
-		},
+		}
 
 	]
 }
