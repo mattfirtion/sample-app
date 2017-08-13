@@ -1,0 +1,3 @@
+[submodule "angular2-sample-app"]
+	path = angular2-sample-app
+	url = https://github.com/mattfirtion/angular2-sample-app.git
